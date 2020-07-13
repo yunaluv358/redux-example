@@ -1,12 +1,12 @@
 import React from "react";
-const countdownActions = dispatcher => ({
+const countdownActions = dispatcher =>({
     tick(currentCount){
         dispatcher.handleAction({type: 'TICK'})
     },
     reset(count){
         dispatcher.handleAction({
             type: 'RESET',
-            count: count
+            count
         })
     }
 })
