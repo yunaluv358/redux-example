@@ -1,5 +1,5 @@
 const userService = {
-    login
+    login, join
 }
 function handleResponse(response) {
     return response.text()
@@ -26,6 +26,19 @@ function login(userid, password) {
         .then(handleResponse)
         .then(user => {
             sessionStorage.setItem('user', JSON.stringify(user))
+            return user
+        })
+}
+function join(userid, password) {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({userid,password})
+    }
+    return fetch(`/users/join`, requestOptions)
+        .then(handleResponse)
+        .then(user => {
+            localStorage.setItem('user', JSON.stringify(user))
             return user
         })
 }

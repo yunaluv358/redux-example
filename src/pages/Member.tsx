@@ -1,7 +1,8 @@
 import React from "react";
 import {Login} from '../components'
+import {Join} from '../components'
 
 const Member = () => <div>
-    <Login/>
+    <Join/>
 </div>
 export default Member

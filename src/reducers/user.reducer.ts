@@ -18,6 +18,20 @@ export function userReducers(state = initialState, action) {
             return {}
         default:
             return state
+        case userConstants.JOIN_REQUEST:
+            return {
+                join: true,
+                user: action.user
+            }
+        case userConstants.JOIN_SUCCESS:
+            return {
+                join: true,
+                user: action.user
+            }
+        case userConstants.JOIN_FAIL:
+            return {}
+            return state
+
     }
 
 }

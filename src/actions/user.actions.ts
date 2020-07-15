@@ -2,7 +2,7 @@ import {userConstants} from '../constants'
 import {userService} from "../apis";
 
 const userActions = {
-    login
+    login, join
 }
 
 function request(userid:string):object {
@@ -16,6 +16,15 @@ function failure(userid:string, error:string):object {
 }
 function login(userid, password) {
     alert(`ID: ${userid}, PW: ${password}`)
+
+    return dispatch =>{
+        dispatch(request(userid))
+    }
+}
+
+
+function join(userid, password, name) {
+    alert(`ID: ${userid}, PW: ${password}, name: ${name}`)
 
     return dispatch =>{
         dispatch(request(userid))
